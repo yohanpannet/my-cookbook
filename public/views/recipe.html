@@ -3,3 +3,17 @@
 
     <h1>{{ recipe.name }}</h1>
 </div>
+
+<h2><span class="label label-primary">Ingredients</span></h2>
+<ul claass="list-group">
+    <li class="list-group-item" ng-repeat="ingredient in recipe.ingredients">
+        <span class="badge">{{ingredient.quantity}}</span>
+        {{ingredient.name}}
+    </li>
+</ul>
+<h2><span class="label label-primary">Etapes</span></h2>
+<ul claass="list-group">
+    <li class="list-group-item" ng-repeat="direction in recipe.directions">
+        {{direction.direction}}
+    </li>
+</ul>

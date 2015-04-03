@@ -1,0 +1,29 @@
+<div class="jumbotron text-center">
+    <h2>Youpi une nouvelle recette de :</h2>
+    <h1> <input type="text" class="form-control input-lg text-center" placeholder="pudding a l'arsenic" ng-model="recipe.name"></h1>
+</div>
+
+</div>
+
+<h2><span class="label label-primary">Ingredients</span></h2>
+<ul claass="list-group">
+<li class="list-group-item" ng-repeat="ingredient in recipe.ingredients">
+    <span class="badge">{{ingredient.quantity}}</span>
+    {{ingredient.name}}
+</li>
+</ul>
+<h2><span class="label label-primary">Etapes</span></h2>
+<ul claass="list-group">
+    <li>
+        <div class="input-group">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" ng-click="addDirection()">+</button>
+          </span>
+          <input type="text" class="form-control" placeholder="faite bouillir à la casserole" ng-model="newDirection" ng-keydown="$event.which === 13 && addDirection()">
+        </div>
+    </li>
+<li class="list-group-item" ng-repeat="direction in recipe.directions">
+    {{direction.direction}}
+</li>
+
+</ul>
