@@ -1,15 +1,19 @@
 angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 
     $routeProvider
-        .when('/', {
+        .when('/recipes', {
             templateUrl: 'views/home.html',
             controller: 'MainController'
         })
 
-        .when('/recipes', {
+        .when('/recipes/:recipeID', {
             templateUrl: 'views/recipe.html',
             controller: 'RecipeController'
         })
 
-    $locationProvider.html5Mode(true);
+        .otherwise({
+            redirectTo: '/recipes'
+        });
+
+    //$locationProvider.html5Mode(true);
 }]);

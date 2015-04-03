@@ -1,7 +1,10 @@
 <!-- public/views/home.html -->
 
 <div class="jumbotron text-center">
-    <h1>Home Page 4 Life</h1>
-
-    <p>{{ tagline }}</p>
+    <h1>Les bonnes recettes</h1>
 </div>
+<h2 ng-repeat="recipe in recipes">
+    <a href="#/recipes/{{recipe._id}}">
+        <span class="label label-primary">{{ recipe.name }}</span>
+    </a>
+</h2>

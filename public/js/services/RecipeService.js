@@ -6,6 +6,10 @@ angular.module('RecipeService', []).factory('Recipe', ['$http', function($http){
             return $http.get('/api/recipes');
         },
 
+        getOne: function(recipeId){
+            return $http.get('/api/recipe/'+recipeId);
+        },
+
         create : function(recipeData){
             return $http.post('/api/recipes', recipeData);
         },

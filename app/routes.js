@@ -14,13 +14,23 @@ module.exports = function(app){
 		});
 	});
 
+	app.get('/api/recipe/:recipe_id', function(req, res){
+		Recipe.findOne({_id:req.params.recipe_id}, function(err, recipe){
+			if (err){
+				res.send(err);
+			} else {
+				res.json(recipe);
+			}
+		});
+	});
+
 	app.post('/api/recipes', function(req, res){
 		//TO DO: Gerer la creation
 	});
 
 	app.delete('/api/recipes/:recipe_id', function(req, res){
 		Recipe.remove({
-			_id: req.params.todo_id
+			_id: req.params.recipe_id
 		}, function(err, recipe){
 			if (err){
 				res.send(err);
